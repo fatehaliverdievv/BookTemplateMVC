@@ -1,0 +1,62 @@
+﻿@model CreateProductVM
+<div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Create Products</h4>
+                  <form class="forms-sample" method="post"  enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label asp-for="Name"></label>
+                      <input asp-for="Name" class="form-control">
+                      <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                      <label asp-for="Description"></label>
+                      <input asp-for="Description" class="form-control">
+                      <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="DiscountPrice"></label>
+                      <input asp-for="DiscountPrice" class="form-control">
+                      <span asp-validation-for="DiscountPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="CostPrice"></label>
+                      <input asp-for="CostPrice" class="form-control">
+                      <span asp-validation-for="CostPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="SellPrice"></label>
+                      <input asp-for="SellPrice" class="form-control">
+                      <span asp-validation-for="SellPrice" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                      <label asp-for="PrimaryImage">Primary Image</label>
+                      <input accept="image/*" asp-for="PrimaryImage" class="form-control">
+                      <span asp-validation-for="PrimaryImage" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                      <label asp-for="SecondaryImage">Secondary Image</label>
+                      <input accept="image/*" asp-for="SecondaryImage" class="form-control">
+                      <span asp-validation-for="SecondaryImage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="OtherImages">Other Images</label>
+                      <input accept="image/*" asp-for="OtherImages" class="form-control">
+                      <span asp-validation-for="OtherImages" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="CategoryIds">Categories</label>
+                      <select asp-for="CategoryIds" asp-items="@ViewBag.Categories" ></select>
+                      <span asp-validation-for="CategoryIds" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                      <label asp-for="TagIds">Tags</label>
+                      <select asp-for="TagIds" asp-items="@ViewBag.Tags"></select>
+                      <span asp-validation-for="TagIds" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Create</button>
+                    <button class="btn btn-light" asp-area="Manage" asp-controller="Product" asp-action="Index">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
